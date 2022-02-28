@@ -1,0 +1,19 @@
+:host aside {
+  position: fixed;
+  top: 0;
+  right: -100%;
+  width: 80vw;
+  height: 100vh;
+  background: #f3f3f3;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.26);
+  transition: right 0.3s ease-in;
+}
+
+:host([open]) aside {
+  @apply right-0;
+}
+
+header {
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.26);
+}
+

@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Stencil Component Starter</title>
+  <script type="module" src="/build/wc-stencil.esm.js"></script>
+  <script nomodule src="/build/wc-stencil.js"></script>
+</head>
+
+<body class="font-sans">
+  <h1>Hello, Web-Component!</h1>
+  <button class="btn btn-outline-secondary" id="side-drawer-btn">Open Menu</button>
+  <wc-side-drawer header-text="App Menu, Some long title">
+    <div slot="content">
+      <ul class="list-group">
+        <li class="list-group-item">Morbi leo risus</li>
+        <li class="list-group-item">Porta ac consectetur ac</li>
+        <li class="list-group-item">Vestibulum at eros</li>
+      </ul>
+    </div>
+  </wc-side-drawer>
+
+  <script>
+    const sideDrawer = document.querySelector('wc-side-drawer');
+    const sideDrawerBtn = document.querySelector('#side-drawer-btn');
+    sideDrawerBtn.addEventListener('click', () => {
+      if (!sideDrawer.open) {
+        sideDrawer.openDrawer()
+      }
+    })
+  </script>
+</body>
+
+</html>
