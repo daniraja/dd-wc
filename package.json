@@ -12,7 +12,7 @@
   "unpkg": "dist/wc-stencil/wc-stencil.esm.js",
   "repository": {
     "type": "git",
-    "url": "https://github.com/ionic-team/stencil-component-starter.git"
+    "url": "https://github.com/daniraja/wc-stencil.git"
   },
   "files": [
     "dist/",
@@ -26,16 +26,14 @@
     "generate": "stencil generate"
   },
   "dependencies": {
-    "@stencil/core": "^2.13.0"
+    "@stencil/core": "2.14.0"
   },
   "devDependencies": {
-    "@tailwindcss/typography": "^0.5.2",
     "@types/jest": "^27.0.3",
     "jest": "^27.4.5",
     "jest-cli": "^27.4.5",
     "puppeteer": "^10.0.0",
-    "stencil-tailwind-plugin": "^1.2.2",
-    "tailwindcss": "^3.0.23"
+    "stencil-tailwind": "0.0.6"
   },
   "license": "MIT"
 }
