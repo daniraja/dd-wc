@@ -12,6 +12,8 @@ export namespace Components {
         "open": boolean;
         "openDrawer": () => Promise<void>;
     }
+    interface WcStockPrice {
+    }
     interface WcToolTip {
         "infoText": string;
         "show": () => Promise<void>;
@@ -25,6 +27,12 @@ declare global {
         prototype: HTMLWcSideDrawerElement;
         new (): HTMLWcSideDrawerElement;
     };
+    interface HTMLWcStockPriceElement extends Components.WcStockPrice, HTMLStencilElement {
+    }
+    var HTMLWcStockPriceElement: {
+        prototype: HTMLWcStockPriceElement;
+        new (): HTMLWcStockPriceElement;
+    };
     interface HTMLWcToolTipElement extends Components.WcToolTip, HTMLStencilElement {
     }
     var HTMLWcToolTipElement: {
@@ -33,6 +41,7 @@ declare global {
     };
     interface HTMLElementTagNameMap {
         "wc-side-drawer": HTMLWcSideDrawerElement;
+        "wc-stock-price": HTMLWcStockPriceElement;
         "wc-tool-tip": HTMLWcToolTipElement;
     }
 }
@@ -42,12 +51,15 @@ declare namespace LocalJSX {
         "headerText"?: string;
         "open"?: boolean;
     }
+    interface WcStockPrice {
+    }
     interface WcToolTip {
         "infoText"?: string;
         "visible"?: boolean;
     }
     interface IntrinsicElements {
         "wc-side-drawer": WcSideDrawer;
+        "wc-stock-price": WcStockPrice;
         "wc-tool-tip": WcToolTip;
     }
 }
@@ -56,6 +68,7 @@ declare module "@stencil/core" {
     export namespace JSX {
         interface IntrinsicElements {
             "wc-side-drawer": LocalJSX.WcSideDrawer & JSXBase.HTMLAttributes<HTMLWcSideDrawerElement>;
+            "wc-stock-price": LocalJSX.WcStockPrice & JSXBase.HTMLAttributes<HTMLWcStockPriceElement>;
             "wc-tool-tip": LocalJSX.WcToolTip & JSXBase.HTMLAttributes<HTMLWcToolTipElement>;
         }
     }

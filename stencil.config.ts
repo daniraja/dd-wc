@@ -2,7 +2,9 @@ import { Config } from '@stencil/core';
 import tailwind from 'stencil-tailwind';
 
 export const config: Config = {
-  plugins: [tailwind()],
+  plugins: [
+    tailwind()
+  ],
   devServer: {
     reloadStrategy: 'pageReload',
   },
