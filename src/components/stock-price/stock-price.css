@@ -1,0 +1,24 @@
+:host {
+  @apply rounded border-solid border-purple-700 border-2 m-2 p-8 block w-1/2;
+}
+
+form input {
+  @apply text-purple-700 p-2 block mb-4 cursor-pointer text-base font-bold uppercase;
+}
+
+form input:focus {
+  @apply outline-none;
+}
+
+form button {
+  @apply py-2 px-4 rounded border-solid border-purple-700 bg-purple-700 text-white cursor-pointer text-base;
+}
+
+form button:hover,
+form button:active{
+  @apply bg-purple-500
+}
+
+form button:disabled{
+  @apply bg-gray-600 cursor-not-allowed
+}

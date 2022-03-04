@@ -21,16 +21,17 @@ export class SideDrawer {
   }
 
   render() {
-    return (
-      <aside >
+    return [
+      <div class="backdrop"></div>,
+      <aside>
         <header class="p-3 flex justify-between shadow-lg">
-          <h2 class="flex-grow text-center">{this.headerText}</h2>
+          <h2 class="m-0 p-0 flex-grow text-center">{this.headerText}</h2>
           <button class="cursor-pointer text-2xl border-0" onClick={this.closeDrawer.bind(this)} aria-label="Close" title='Close'>&times;</button>
         </header>
-        <main class="h-full p-5">
+        <main class="h-full p-5 prose">
           <slot name="content" />
         </main>
       </aside>
-    );
+    ];
   }
 }

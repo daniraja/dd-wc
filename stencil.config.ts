@@ -1,10 +1,10 @@
 import { Config } from '@stencil/core';
-import tailwind, { PluginOpts } from 'stencil-tailwind-plugin';
-
-const opts = Object.assign({}, PluginOpts.DEFAULT, { debug: false, stripComments: true });
+import tailwind from 'stencil-tailwind';
 
 export const config: Config = {
-  plugins: [tailwind(opts)],
+  plugins: [
+    tailwind()
+  ],
   devServer: {
     reloadStrategy: 'pageReload',
   },

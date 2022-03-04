@@ -5,12 +5,16 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Stencil Component Starter</title>
+  <link rel="stylesheet" href="/assets/styles.css">
   <script type="module" src="/build/wc-stencil.esm.js"></script>
   <script nomodule src="/build/wc-stencil.js"></script>
 </head>
 
 <body class="font-sans">
-  <h1>Hello, Web-Component!</h1>
+  <h1 class="p-0 m-0">Hello, Web-Component!</h1>
+
+  <wc-stock-price></wc-stock-price>
+  <!-- 
   <button class="btn btn-outline-secondary" id="side-drawer-btn">Open Menu</button>
   <wc-side-drawer header-text="App Menu, Some long title">
     <div slot="content">
@@ -30,7 +34,8 @@
         sideDrawer.openDrawer()
       }
     })
-  </script>
+  </script> 
+  -->
 </body>
 
 </html>
