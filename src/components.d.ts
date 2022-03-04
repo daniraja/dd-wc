@@ -6,13 +6,29 @@
  */
 import { HTMLStencilElement, JSXBase } from "@stencil/core/internal";
 export namespace Components {
+    interface WcAlert {
+        "autoClose": boolean;
+        "closeIcon": boolean;
+        "closeInMs": number;
+        "heading": string;
+        "message": string;
+        "show": boolean;
+        "size": 'sm' | 'md' | 'lg';
+        "type": 'success' | 'warning' | 'error' | 'info';
+    }
     interface WcSideDrawer {
         "closable": boolean;
         "headerText": string;
         "open": boolean;
         "openDrawer": () => Promise<void>;
     }
+    interface WcStockFinder {
+    }
     interface WcStockPrice {
+        "alertHeading": any;
+        "alertMsg": any;
+        "alertShow": any;
+        "alertType": any;
     }
     interface WcToolTip {
         "infoText": string;
@@ -21,11 +37,23 @@ export namespace Components {
     }
 }
 declare global {
+    interface HTMLWcAlertElement extends Components.WcAlert, HTMLStencilElement {
+    }
+    var HTMLWcAlertElement: {
+        prototype: HTMLWcAlertElement;
+        new (): HTMLWcAlertElement;
+    };
     interface HTMLWcSideDrawerElement extends Components.WcSideDrawer, HTMLStencilElement {
     }
     var HTMLWcSideDrawerElement: {
         prototype: HTMLWcSideDrawerElement;
         new (): HTMLWcSideDrawerElement;
+    };
+    interface HTMLWcStockFinderElement extends Components.WcStockFinder, HTMLStencilElement {
+    }
+    var HTMLWcStockFinderElement: {
+        prototype: HTMLWcStockFinderElement;
+        new (): HTMLWcStockFinderElement;
     };
     interface HTMLWcStockPriceElement extends Components.WcStockPrice, HTMLStencilElement {
     }
@@ -40,25 +68,46 @@ declare global {
         new (): HTMLWcToolTipElement;
     };
     interface HTMLElementTagNameMap {
+        "wc-alert": HTMLWcAlertElement;
         "wc-side-drawer": HTMLWcSideDrawerElement;
+        "wc-stock-finder": HTMLWcStockFinderElement;
         "wc-stock-price": HTMLWcStockPriceElement;
         "wc-tool-tip": HTMLWcToolTipElement;
     }
 }
 declare namespace LocalJSX {
+    interface WcAlert {
+        "autoClose"?: boolean;
+        "closeIcon"?: boolean;
+        "closeInMs"?: number;
+        "heading"?: string;
+        "message"?: string;
+        "show"?: boolean;
+        "size"?: 'sm' | 'md' | 'lg';
+        "type"?: 'success' | 'warning' | 'error' | 'info';
+    }
     interface WcSideDrawer {
         "closable"?: boolean;
         "headerText"?: string;
         "open"?: boolean;
     }
+    interface WcStockFinder {
+        "onWcSelectedSymbol"?: (event: CustomEvent<string>) => void;
+    }
     interface WcStockPrice {
+        "alertHeading"?: any;
+        "alertMsg"?: any;
+        "alertShow"?: any;
+        "alertType"?: any;
     }
     interface WcToolTip {
         "infoText"?: string;
         "visible"?: boolean;
     }
     interface IntrinsicElements {
+        "wc-alert": WcAlert;
         "wc-side-drawer": WcSideDrawer;
+        "wc-stock-finder": WcStockFinder;
         "wc-stock-price": WcStockPrice;
         "wc-tool-tip": WcToolTip;
     }
@@ -67,7 +116,9 @@ export { LocalJSX as JSX };
 declare module "@stencil/core" {
     export namespace JSX {
         interface IntrinsicElements {
+            "wc-alert": LocalJSX.WcAlert & JSXBase.HTMLAttributes<HTMLWcAlertElement>;
             "wc-side-drawer": LocalJSX.WcSideDrawer & JSXBase.HTMLAttributes<HTMLWcSideDrawerElement>;
+            "wc-stock-finder": LocalJSX.WcStockFinder & JSXBase.HTMLAttributes<HTMLWcStockFinderElement>;
             "wc-stock-price": LocalJSX.WcStockPrice & JSXBase.HTMLAttributes<HTMLWcStockPriceElement>;
             "wc-tool-tip": LocalJSX.WcToolTip & JSXBase.HTMLAttributes<HTMLWcToolTipElement>;
         }
