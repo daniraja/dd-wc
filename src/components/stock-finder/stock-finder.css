@@ -18,7 +18,7 @@ li:hover,
 li:active,
 form button:hover,
 form button:active {
-  @apply bg-purple-300 text-purple-800;
+  @apply bg-purple-300;
 }
 
 form button:disabled {
