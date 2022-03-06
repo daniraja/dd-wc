@@ -16,6 +16,10 @@ export namespace Components {
         "size": 'sm' | 'md' | 'lg';
         "type": 'success' | 'warning' | 'error' | 'info';
     }
+    interface WcLoading {
+        "backdrop": boolean;
+        "type": 'partial' | 'full';
+    }
     interface WcSideDrawer {
         "closable": boolean;
         "headerText": string;
@@ -43,6 +47,12 @@ declare global {
         prototype: HTMLWcAlertElement;
         new (): HTMLWcAlertElement;
     };
+    interface HTMLWcLoadingElement extends Components.WcLoading, HTMLStencilElement {
+    }
+    var HTMLWcLoadingElement: {
+        prototype: HTMLWcLoadingElement;
+        new (): HTMLWcLoadingElement;
+    };
     interface HTMLWcSideDrawerElement extends Components.WcSideDrawer, HTMLStencilElement {
     }
     var HTMLWcSideDrawerElement: {
@@ -69,6 +79,7 @@ declare global {
     };
     interface HTMLElementTagNameMap {
         "wc-alert": HTMLWcAlertElement;
+        "wc-loading": HTMLWcLoadingElement;
         "wc-side-drawer": HTMLWcSideDrawerElement;
         "wc-stock-finder": HTMLWcStockFinderElement;
         "wc-stock-price": HTMLWcStockPriceElement;
@@ -85,6 +96,10 @@ declare namespace LocalJSX {
         "show"?: boolean;
         "size"?: 'sm' | 'md' | 'lg';
         "type"?: 'success' | 'warning' | 'error' | 'info';
+    }
+    interface WcLoading {
+        "backdrop"?: boolean;
+        "type"?: 'partial' | 'full';
     }
     interface WcSideDrawer {
         "closable"?: boolean;
@@ -106,6 +121,7 @@ declare namespace LocalJSX {
     }
     interface IntrinsicElements {
         "wc-alert": WcAlert;
+        "wc-loading": WcLoading;
         "wc-side-drawer": WcSideDrawer;
         "wc-stock-finder": WcStockFinder;
         "wc-stock-price": WcStockPrice;
@@ -117,6 +133,7 @@ declare module "@stencil/core" {
     export namespace JSX {
         interface IntrinsicElements {
             "wc-alert": LocalJSX.WcAlert & JSXBase.HTMLAttributes<HTMLWcAlertElement>;
+            "wc-loading": LocalJSX.WcLoading & JSXBase.HTMLAttributes<HTMLWcLoadingElement>;
             "wc-side-drawer": LocalJSX.WcSideDrawer & JSXBase.HTMLAttributes<HTMLWcSideDrawerElement>;
             "wc-stock-finder": LocalJSX.WcStockFinder & JSXBase.HTMLAttributes<HTMLWcStockFinderElement>;
             "wc-stock-price": LocalJSX.WcStockPrice & JSXBase.HTMLAttributes<HTMLWcStockPriceElement>;
