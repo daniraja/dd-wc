@@ -6,8 +6,9 @@ import { Component, h, Prop } from '@stencil/core';
   shadow: true,
 })
 export class Loading {
-  @Prop({reflect: true, mutable: true}) type: 'partial' | 'full';
-  @Prop({reflect: true, mutable: true}) backdrop = true;
+  // TODO partial and full screen loading
+  @Prop({ reflect: true, mutable: true }) type: 'partial' | 'full';
+  @Prop({ reflect: true, mutable: true }) backdrop = true;
 
   render() {
     let backdropCls = this.backdrop ? 'backdrop' : '';

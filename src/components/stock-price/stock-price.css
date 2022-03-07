@@ -3,7 +3,7 @@
 }
 
 :host {
-  @apply rounded border-solid border-purple-700 border-2 block w-1/2 p-4 my-4;
+  @apply rounded border-solid border-purple-700 border-2 block p-4 my-4;
 }
 
 form input {

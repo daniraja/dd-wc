@@ -13,9 +13,9 @@ export class Alert {
   @Prop({ reflect: true, mutable: true }) size: 'sm' | 'md' | 'lg' = 'md';
 
   @Watch('show')
-  alertChanged(newVal: string, oldVal: string){
-    if( newVal !== oldVal) {
-      console.log('alertChanged', oldVal, newVal)
+  alertChanged(newVal: string, oldVal: string) {
+    if (newVal !== oldVal) {
+      console.log('alertChanged', oldVal, newVal);
     }
   }
 
@@ -46,6 +46,7 @@ export class Alert {
       );
       // Show heading
       let heading = this.heading ? <div class="heading">{this.heading}</div> : '';
+      // Main Render
       content = (
         <div class={`alert ${this.type} ${this.size}`}>
           <div class="flex-grow">
