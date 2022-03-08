@@ -1,7 +1,8 @@
-import { Component, h, Method, Prop } from '@stencil/core';
+import { Component, h, Prop } from '@stencil/core';
 
 @Component({
   tag: 'wc-tool-tip',
+  styleUrl: './tool-tip.css',
   shadow: true,
 })
 export class ToolTip {
@@ -12,14 +13,17 @@ export class ToolTip {
     this.visible = false;
   }
 
-  @Method()
-  async show() {
-    this.visible = true;
+  onToolTip(show: boolean) {
+    this.visible = show;
   }
 
   render() {
-    return (
-      <span>?</span>
-    )
+    let toolTip = this.visible ? <slot /> : '';
+    return [
+      <span class="help-icon" onMouseOver={this.onToolTip.bind(this, true)} onMouseLeave={this.onToolTip.bind(this, false)}>
+        (?)
+      </span>,
+      <div class="tooltip">{toolTip}</div>,
+    ];
   }
 }

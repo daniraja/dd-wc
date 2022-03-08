@@ -47,21 +47,26 @@ export class StockFinder {
   }
 
   onSelectSymbol(symbol: string) {
-    this.wcSelectedSymbol.emit(symbol)
+    this.wcSelectedSymbol.emit(symbol);
   }
 
   render() {
     return [
+      <h3>Stock finder</h3>,
       <form onSubmit={this.onFind.bind(this)}>
-        <input id="keywords" ref={el => (this.stockNameInput = el)} 
-        onChange={this.onUserInput.bind(this)} />
-        <button type="submit" disabled={!this.validInput}>Find</button>
+        <input id="keywords" ref={el => (this.stockNameInput = el)} onChange={this.onUserInput.bind(this)} />
+        <button type="submit" disabled={!this.validInput}>
+          Find
+        </button>
       </form>,
       <ul class="m-0 p-0 list-none">
         {this.searchResult.map(result => (
-          <li class="my-2 p-2 border border-solid rounded border-purple-400 text-purple-600 cursor-pointer flex justify-between" 
-          onClick={this.onSelectSymbol.bind(this, result.symbol)}>
-            <span class="font-bold text-purple-800">{result.symbol}</span><span>{result.name}</span>
+          <li
+            class="my-2 p-2 border border-solid rounded border-purple-400 text-purple-600 cursor-pointer flex justify-between"
+            onClick={this.onSelectSymbol.bind(this, result.symbol)}
+          >
+            <span class="min-w-1/3 font-bold text-purple-800">{result.symbol}</span>
+            <span class="text-right">{result.name}</span>
           </li>
         ))}
       </ul>,

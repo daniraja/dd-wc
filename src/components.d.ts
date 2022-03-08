@@ -36,7 +36,6 @@ export namespace Components {
     }
     interface WcToolTip {
         "infoText": string;
-        "show": () => Promise<void>;
         "visible": boolean;
     }
 }

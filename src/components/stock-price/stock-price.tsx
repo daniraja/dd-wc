@@ -79,6 +79,7 @@ export class StockPrice {
 
   render() {
     return [
+      <h3>Stock price checker</h3>,<wc-tool-tip>Some tooltip</wc-tool-tip>,
       <wc-alert show={this.alertShow} heading={this.alertHeading} message={this.alertMsg} type={this.alertType}></wc-alert>,
       <form onSubmit={this.onFetch.bind(this)}>
         <input autocomplete="off" id="stock-symbol" ref={el => (this.symbol = el)} value={this.userInput} onInput={this.onUserInput.bind(this)} />
@@ -87,9 +88,10 @@ export class StockPrice {
         </button>
       </form>,
       <div>
-        <p class="font-bold text-purple-800">Price: $ {this.rate}</p>
+        <h4 class="bold uppercase text-purple-800">
+          {this.userInput && this.rate ? this.userInput : 'Price'}: $ {this.rate}
+        </h4>
       </div>,
-      
     ];
   }
 }
