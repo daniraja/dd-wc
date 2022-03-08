@@ -9,10 +9,10 @@
   "types": "dist/types/components.d.ts",
   "collection": "dist/collection/collection-manifest.json",
   "collection:main": "dist/collection/index.js",
-  "unpkg": "dist/wc-stencil/wc-stencil.esm.js",
+  "unpkg": "dist/dd-wc/dd-wc.esm.js",
   "repository": {
     "type": "git",
-    "url": "https://github.com/daniraja/wc-stencil.git"
+    "url": "https://github.com/daniraja/dd-wc.git"
   },
   "files": [
     "dist/",
