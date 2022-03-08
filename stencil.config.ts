@@ -6,7 +6,7 @@ export const config: Config = {
   devServer: {
     reloadStrategy: 'pageReload',
   },
-  namespace: 'wc-stencil',
+  namespace: 'dd-wc',
   outputTargets: [
     {
       type: 'dist',
