@@ -1,22 +1,31 @@
+[![npm version](https://badge.fury.io/js/dd-wc.svg)](https://badge.fury.io/js/dd-wc)
 ## Getting Started
 
-To start building a new web component using Stencil, clone this repo to a new directory:
+To use web component, install this app:
 
 ```bash
-git clone 
-cd my-component
-git remote rm origin
+npm i dd-wc
 ```
 
-and run:
 
-```bash
-npm install
-npm start
-```
+## Web Component List
+- Alert
+- Loading (Spinner)
+- Side Drawer
+- Stock Finder
+- Stock Price
+- Tooltip
 
-To build the component for production, run:
-
-```bash
-npm run build
-```
+### ToDo
+- Card
+- Snackbar
+- Tab
+- Button
+- Checkbox
+- Radio
+- ListView
+- Avatar
+- Icon
+- Switch
+- Model
+- Pane (Iframe)

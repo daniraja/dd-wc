@@ -18,7 +18,7 @@ export class ToolTip {
   }
 
   render() {
-    let toolTip = this.visible ? <slot /> : '';
+    let toolTip = this.visible ? <div><slot /></div> : '';
     return [
       <span class="help-icon" onMouseOver={this.onToolTip.bind(this, true)} onMouseLeave={this.onToolTip.bind(this, false)}>
         (?)

@@ -1,3 +1,13 @@
-.help-icon{
-  @apply text-yellow-800 font-bold
+:host {
+  @apply relative;
+}
+.help-icon {
+  @apply text-purple-800 font-bold;
+}
+
+.tooltip {
+  @apply absolute z-10;
+}
+.tooltip div {
+  @apply bg-purple-900 text-purple-200 p-2 rounded w-auto max-w-xs block text-sm;
 }
