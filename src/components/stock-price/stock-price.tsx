@@ -79,7 +79,7 @@ export class StockPrice {
 
   render() {
     return [
-      <h3>Stock price checker <wc-tool-tip>Please enter a stock symbol and click fetch.</wc-tool-tip></h3>,,
+      <h3>Stock price checker<wc-tool-tip>Please enter a stock symbol and click fetch.</wc-tool-tip></h3>,,
       <wc-alert show={this.alertShow} heading={this.alertHeading} message={this.alertMsg} type={this.alertType}></wc-alert>,
       <form onSubmit={this.onFetch.bind(this)}>
         <input autocomplete="off" id="stock-symbol" ref={el => (this.symbol = el)} value={this.userInput} onInput={this.onUserInput.bind(this)} />
