@@ -52,7 +52,7 @@ export class StockFinder {
 
   render() {
     return [
-      <h3>Stock finder</h3>,
+      <h3>Stock finder<wc-tool-tip>Please enter some keywords to search stocks.</wc-tool-tip></h3>,
       <form onSubmit={this.onFind.bind(this)}>
         <input id="keywords" ref={el => (this.stockNameInput = el)} onChange={this.onUserInput.bind(this)} />
         <button type="submit" disabled={!this.validInput}>
